@@ -4,10 +4,10 @@ public class Carrito {
 	
 
 	final int tamMax = 50;
-	private Producto[] itemsCarrito = new Producto[tamMax];
+	private ProductoComercializable[] itemsCarrito = new ProductoComercializable[tamMax];
 	
 	
-	public boolean addProducto (Producto item) {
+	public boolean addProducto (ProductoComercializable item) {
 		int posicion = 0;
 		boolean insercionOK = false;
 		for (int i = 0; itemsCarrito[i] != null; i++) {
@@ -28,13 +28,13 @@ public class Carrito {
 
 	public String getInformeCarrito () {
 		//Arrays.sort(itemsCarrito[].precio);
-		Producto auxProductos = new Producto("",0);
+		ProductoComercializable auxProductos = new Producto("",0);
 		int posicionFinal = 0;
 		String informeCarrito = "";
 		if (itemsCarrito[0] == null) {
-			return "Carrito vacío";
+			return "Carrito vacio";
 		}
-		//Ordenación por precio.
+		//Ordenacion por precio.
 		for (int i = 1; itemsCarrito[i] != null; i++) {
 			if (itemsCarrito[i].getPrice() < itemsCarrito[i-1].getPrice()) {
 				auxProductos = itemsCarrito[i-1];
@@ -53,7 +53,7 @@ public class Carrito {
 				posicionFinal = i-1;
 			}
 		}
-		//Generación del texto
+		//Generacion del texto
 		for (int i = 0; itemsCarrito[i] != null; i++) {
 			informeCarrito += itemsCarrito[i].toString() + "\n";
 		}

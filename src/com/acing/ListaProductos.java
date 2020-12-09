@@ -21,6 +21,10 @@ public class ListaProductos {
 		this.addProducto (id, descripcion, precio);
 	}
 	
+	public void addProducto(ProductoComercializable producto) {
+		listaProductos.add(producto);
+	}
+	
 	public Producto getProducto(int id) {
 		
 		Iterator<ProductoComercializable> it =  listaProductos.iterator();
