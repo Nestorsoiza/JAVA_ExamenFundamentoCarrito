@@ -31,13 +31,14 @@ public class StockItem implements Comparable<StockItem> {
 		return item.getID();
 	}
 	
-	@Override
-	public String toString() {
-		return cantidadItem + " unidades de " + item.toString();
-	}
 	
 	public int comparable(StockItem obj) {
 		return (getID() - obj.getID());
+	}
+	
+	@Override
+	public String toString() {
+		return cantidadItem + " unidades de " + item.toString();
 	}
 
 	@Override
@@ -45,6 +46,5 @@ public class StockItem implements Comparable<StockItem> {
 		StockItem otroProd = (StockItem) obj;
 		return (getID() - otroProd.getID());
 	}
-	
 	
 }
